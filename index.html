@@ -434,6 +434,18 @@ $(document).on(':passagerender', function (event) {
     }
 
 });
+
+// Reiniciar la historia al recargar la página
+$(document).on(':storyready', function () {
+    if (window.performance && performance.getEntriesByType) {
+        const navigation = performance.getEntriesByType('navigation')[0];
+
+        if (navigation && navigation.type === 'reload') {
+            Save.clear();
+            Engine.restart();
+        }
+    }
+});
 </script><tw-passagedata pid="1" name="Primer Pasaje (Prueba)" tags="" position="800,325" size="100,100">&lt;div class=&quot;escena-inicial&quot; id=&quot;introduccion&quot;&gt;
 
     &lt;h1 class=&quot;elemento-titulo&quot;&gt;Un Viaje Incierto&lt;/h1&gt;
