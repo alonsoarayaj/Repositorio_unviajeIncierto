@@ -295,7 +295,67 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     z-index: 1;
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+/* Panel negro del título */
+.panel-titulo {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 28px 15px 34px;
+    text-align: center;
+    margin: 0;
+    isolation: isolate;
+    box-sizing: border-box;
+}
+/* Fondo negro con fade in */
+.panel-titulo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #100e0a;
+    z-index: -1;
+    opacity: 0;
+    animation: aparecer-fondo 1s ease forwards;
+    animation-delay: 6s;
+}
+
+.titulo-principal {
+    color: #ffffff;
+    font-size: 36px;
+    margin: 0 0 0px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: aparecer-texto 1s ease forwards;
+    animation-delay: 6.8s;
+}
+
+.subtitulo-principal {
+    color: #e6c45b;
+    font-size: 23px;
+    margin: 0;
+    line-height: 1.2;
+    opacity: 0;
+    animation: aparecer-texto 1s ease forwards;
+    animation-delay: 7.7s;
+}
+
+/* Animaciones */
+@keyframes aparecer-fondo {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes aparecer-texto {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">
 /* =========================================
    UN VIAJE INCIERTO
    Control audiovisual - SugarCube 2
@@ -476,14 +536,13 @@ $(document).on(':storyready', function () {
         Aquí comenzará el relato de tu formación en Europa...
     &lt;/p&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Escena3" tags="" position="925,450" size="100,100">&lt;div class=&quot;escena-inicial&quot;&gt;
-
-    &lt;h1 class=&quot;elemento-titulo&quot;&gt;Título de la escena&lt;/h1&gt;
-
-    &lt;p class=&quot;texto-intro visible&quot;&gt;
-        Aquí irá el contenido de la narración.
-    &lt;/p&gt;
-
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Escena3" tags="" position="925,450" size="100,100">&lt;div class=&quot;panel-titulo&quot;&gt;
+    &lt;h1 class=&quot;titulo-principal&quot;&gt;
+        Un Viaje Incierto
+    &lt;/h1&gt;
+    &lt;h2 class=&quot;subtitulo-principal&quot;&gt;
+        Basado en la historia de Hernando de Soto
+    &lt;/h2&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
