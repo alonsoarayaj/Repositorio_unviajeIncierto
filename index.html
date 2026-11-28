@@ -307,14 +307,14 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     margin: 0;
     isolation: isolate;
     box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
 }
 /* Fondo negro con fade in */
 .panel-titulo::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: #100e0a;
-    z-index: -1;
+    background: rgba(16, 14, 10, 0.5);    z-index: -1;
     opacity: 0;
     animation: aparecer-fondo 1s ease forwards;
     animation-delay: 6s;
@@ -328,6 +328,8 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     opacity: 0;
     animation: aparecer-texto 1s ease forwards;
     animation-delay: 6.8s;
+    margin-bottom: 0px;
+    line-height: 1.1;
 }
 
 .subtitulo-principal {
@@ -338,6 +340,8 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     opacity: 0;
     animation: aparecer-texto 1s ease forwards;
     animation-delay: 7.7s;
+    margin-top: 0px;
+    line-height: 1.1;
 }
 
 /* Animaciones */
